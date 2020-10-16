@@ -1,0 +1,18 @@
+.TitleModa{
+    font-family: Brush Script MT;
+    font-size: 75px;
+    text-align: center;
+}
+.TextBody{
+    font-family: Helvetica, Arial , sans-serif;
+    font-size: 23px;
+    font-weight: lighter;
+    text-align: justify;
+    padding-right: 10px;
+}
+
+.TextCentrado{
+    width: 100%;
+    text-align: center;
+    background-color: red;
+}

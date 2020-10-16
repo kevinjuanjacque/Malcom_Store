@@ -1,0 +1,8 @@
+.ImagePortada{
+    width: 100%;
+    min-width: 200px;
+    border-radius: 1em;
+}
+.logo{
+    max-width: 150px;
+}
