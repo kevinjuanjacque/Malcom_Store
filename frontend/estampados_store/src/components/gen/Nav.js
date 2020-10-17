@@ -2,7 +2,7 @@ import React from 'react';
 import {Link,  NavLink } from 'react-router-dom';
 import logo from '../../Assets/logoMalcomStore.png';
 
-import {AiFillHome} from 'react-icons/ai';
+import {AiOutlineHome, AiOutlineUser,AiOutlineShopping,AiOutlineHeart,AiOutlineSkin} from 'react-icons/ai';
 
 export const Nav = () => {
     return (
@@ -15,18 +15,32 @@ export const Nav = () => {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <NavLink className="nav-link" activeClassName="active" to="/"><AiFillHome size="25" className="mb-2" /> Home</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" activeClassName="active" to="/"><AiFillHome size="25" className="mb-2" /> Home</NavLink>
-                </li>
-                
-                <li className="nav-item">
+                <div className="ml-5 mx-auto ">
+                    <ul className="navbar-nav ml-5 form-inline">
+                    <li className="nav-item ">
+                        <NavLink className="nav-link" activeClassName="active" exact to="/"><AiOutlineHome size="25" className="mb-2" /> Home</NavLink>
+                    </li>
+                    <li className="nav-item">
+            
+                        <NavLink className="nav-link ml-4" activeClassName="active" to="/s"><AiOutlineSkin size="25" className="mb-2" /> Categoria</NavLink>
+                    </li>
                     
-                    
-                </li>
+                    <li className="nav-item">
+                        
+                        
+                    </li>
+                    </ul>
+                </div>
+                <ul className="navbar-nav ml-auto form-inline">
+                    <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/Authentication"><AiOutlineUser size="25" className="mb-2" /> </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/Login"><AiOutlineShopping size="25" className="mb-2" /> </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/Login"><AiOutlineHeart size="25" className="mb-2" /> </NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>

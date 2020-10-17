@@ -1,6 +1,6 @@
 import React from 'react';
 import {AiOutlineInstagram,} from 'react-icons/ai';
-export const ImgPresentacion = () => {
+export const ImgPresentacionIzq = () => {
     return (
         <div className="row ">
             <div className="col ">
