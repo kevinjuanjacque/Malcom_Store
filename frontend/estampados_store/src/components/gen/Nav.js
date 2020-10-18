@@ -3,8 +3,17 @@ import {Link,  NavLink } from 'react-router-dom';
 import logo from '../../Assets/logoMalcomStore.png';
 
 import {AiOutlineHome, AiOutlineUser,AiOutlineShopping,AiOutlineHeart,AiOutlineSkin} from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
+import { types } from '../../types/type';
 
 export const Nav = () => {
+    const dispatch = useDispatch();
+    const auth = useSelector(state => state.auth);
+    const logOut=()=>{
+        dispatch({
+            type:types.logout
+        })
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light sticky-top">
             <Link to="/" className="navbar-brand">
@@ -32,9 +41,24 @@ export const Nav = () => {
                     </ul>
                 </div>
                 <ul className="navbar-nav ml-auto form-inline">
-                    <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/Authentication"><AiOutlineUser size="25" className="mb-2" /> </NavLink>
-                    </li>
+                    {
+                    (!auth.nombre) ? (<li className={(auth.nombre) ? "nav-item ml-5" : "nav-item"}>
+                        <NavLink className={(auth.nombre) ? "nav-link ml-5" : "nav-link"} activeClassName="active" to="/Authentication">
+                            <AiOutlineUser size="25" className="mb-2" /> 
+                        </NavLink>
+                    </li>):
+                    (<li className="nav-item dropdown ml-5">
+                        <a className="nav-link dropdown-toggle ml-5" href="/#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <AiOutlineUser size="25" className="mb-2" /> {(auth.nombre) && auth.nombre}
+                        </a>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <button className="dropdown-item" >Action</button>
+                        <button className="dropdown-item" >Another action</button>
+                        <div className="dropdown-divider"></div>
+                        <button className="dropdown-item" onClick={logOut}>Cerrar Sesion</button>
+                        </div>
+                    </li>)
+                    }
                     <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/Login"><AiOutlineShopping size="25" className="mb-2" /> </NavLink>
                     </li>

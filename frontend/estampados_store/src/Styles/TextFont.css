@@ -12,9 +12,8 @@
 }
 
 .TextCentrado{
-    width: 100%;
     text-align: center;
-    background-color: red;
+    font-size: 13px;
 }
 
 .textSubTitle{

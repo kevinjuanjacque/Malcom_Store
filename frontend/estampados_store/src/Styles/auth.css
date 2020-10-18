@@ -1,0 +1,18 @@
+.border-left{
+    border-left: 5px;
+    border-color: gray;
+}
+
+.autbox{
+    background-color: transparent;
+}
+.boxtotal{
+    background:linear-gradient(0.12turn,azure,white)
+}
+
+.sombra{
+    -webkit-box-shadow: 10px 10px 22px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 22px 3px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 22px 3px rgba(0,0,0,0.75);
+    border-radius: 1em;
+}
